@@ -5,25 +5,26 @@
 #include<queue>
 #include<unordered_map>
 #include<map>
+#include<sstream>
 using namespace std;
 
-struct TreeNode {
-        int val;
-        TreeNode *left;
-        TreeNode *right;
-        TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-    };
-
-bool isSameTree(TreeNode* p, TreeNode* q) {
-    if(p->val==q->val){
-        if(p->left and q->left){
-            if(!isSameTree(p->left,q->left))
-                return false;
-        }
+vector<string> rui;
+string temp;
+void dfs(string s,int index){
+    for(int i=index;i<s.size();i++){
+        temp.push_back(s[i]);
     }
 }
 
-int main(){
+vector<string> Permutation(string str) {
+    sort(str.begin(),str.end());
+    dfs(str,0);
+    return rui;
+}
 
+int main(){
+    string s="bcaeg";
+    sort(s.begin(),s.end());
+    cout<<s<<endl;
     return 0;
 }
