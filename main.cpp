@@ -8,7 +8,9 @@
 #include<sstream>
 using namespace std;
 
+int FirstNotRepeatingChar(string str) {
 
+}
 
 int main(){
 
