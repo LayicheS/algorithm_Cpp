@@ -22,6 +22,35 @@ vector<int> inorderTraversal(TreeNode* root) {
         inorderTraversal(root->right);
     }
 }
+//迭代版
+vector<int> inorderTraversal(TreeNode* root) {
+    TreeNode* p=root;
+    stack<TreeNode*> tmp;
+    vector<int> rst;
+    while(p){
+        if(p->left){
+            tmp.push(p);
+            p=p->left;
+        }
+        else{
+            rst.push_back(p->val);
+            if(p->right) p=p->right;
+            else{
+                while(!tmp.empty() and !tmp.top()->right){
+                    rst.push_back(tmp.top()->val);
+                    tmp.pop();
+                }
+                if(tmp.empty()) p=nullptr;
+                else{
+                    rst.push_back(tmp.top()->val);
+                    p=tmp.top()->right;
+                    tmp.pop();
+                }
+            }
+        }
+    }
+    return rst;
+}
 
 int main(){
 
