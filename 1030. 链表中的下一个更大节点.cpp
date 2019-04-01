@@ -18,6 +18,7 @@ struct ListNode {
 
 vector<int> nextLargerNodes(ListNode* head) {
     vector<int> rst;
+    //两个栈实现，一个最小栈，一个用啦存最小栈的序号
     stack<int> tmp,order;
     int index=0;
     while(head){
